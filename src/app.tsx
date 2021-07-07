@@ -18,7 +18,12 @@ function getNightmareUrl() {
   }
 
 function render() {
-  ReactDOM.render(<button onClick={getNightmareUrl}>Hello from React!</button>, document.body);
+    ReactDOM.render(
+        <React.StrictMode>
+            <button onClick={getNightmareUrl}>Hello from React!</button>
+        </React.StrictMode>,
+        document.getElementById("app")
+    );
 }
 
 render();
