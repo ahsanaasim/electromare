@@ -1,16 +1,18 @@
 // @ts-nocheck
 import Nightmare from 'nightmare';
+const electron = require('electron')
 
 process.once('loaded', () => {
-    console.log('asd')
-    const nightmare = new Nightmare({ show: true, electronPath: require('electron') })
+    // console.log(electron.app)
+    // console.log(electron.remote)
+    // const nightmare = new Nightmare({ show: true, electronPath: require('electron') })
         // (window).nightmare = nightmare;
-    nightmare.goto('https://duckduckgo.com').wait(1000000)
-        .then(() => {
-            console.log('done')
-        }).catch((e) => {
-            console.log(e)
-        })
+    // nightmare.goto('https://duckduckgo.com').wait(1000000)
+    //     .then(() => {
+    //         console.log('done')
+    //     }).catch((e) => {
+    //         console.log(e)
+    //     })
     // const electronPath = electron.remote.app.getPath('exe');
     // console.log(nightmare);
     // return nightmare
