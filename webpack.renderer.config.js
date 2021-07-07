@@ -1,5 +1,6 @@
 const rules = require('./webpack.rules');
 const plugins = require('./webpack.plugins');
+const nodeExternals = require('webpack-node-externals');
 
 rules.push({
   test: /\.css$/,
@@ -12,6 +13,13 @@ module.exports = {
   },
   plugins: plugins,
   resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css']
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
+    // fallback: {
+    //   "fs": false,
+    //   "child_process": false,
+    //   "path": false,
+    //   "util": false
+    // },
   },
+  externals: [nodeExternals()],
 };
